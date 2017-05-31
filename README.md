@@ -2,6 +2,10 @@
 Source code for a Movie Trailer website.
 
 ## Get Started
+`git clone https://github.com/Qi-Z/MovieTrailerWebsite.git`
+
+`cd MovieTrailerWebsite`
+
 `python fresh_tomatoes.py`
 
 ## Usage

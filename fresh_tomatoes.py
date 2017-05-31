@@ -1,7 +1,7 @@
 import webbrowser
 import os
 import re
-
+from entertainment_center import EntertainmentCenter
 
 # Styles and scripting for the page
 main_page_head = '''
@@ -38,7 +38,8 @@ main_page_head = '''
         .movie-tile {
             margin-bottom: 20px;
             padding-top: 20px;
-        }
+            min-height: 500px;
+        } 
         .movie-tile:hover {
             background-color: #EEE;
             cursor: pointer;
@@ -113,7 +114,7 @@ main_page_content = '''
       </div>
     </div>
     <div class="container">
-      {movie_tiles}
+        {movie_tiles}
     </div>
   </body>
 </html>
@@ -165,3 +166,10 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+
+if __name__ == "__main__":
+    entertainment_center = EntertainmentCenter("movies.json")
+    movies = entertainment_center.get_movies()
+
+    # Open web browser
+    open_movies_page(movies)
